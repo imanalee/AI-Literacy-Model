@@ -1,0 +1,32 @@
+[
+    {
+        "Grade Level": "Primary",
+        "Subject": "Math",
+        "Description": "Fun math games and exercises for early learners",
+        "URL": "https://www.khanacademy.org/math"
+    },
+    {
+        "Grade Level": "Primary",
+        "Subject": "English",
+        "Description": "Basic reading and writing skills for kids",
+        "URL": "https://www.starfall.com"
+    },
+    {
+        "Grade Level": "Secondary",
+        "Subject": "Math",
+        "Description": "Algebra and geometry concepts",
+        "URL": "https://www.mathsisfun.com"
+    },
+    {
+        "Grade Level": "Secondary",
+        "Subject": "Computer Science",
+        "Description": "Introduction to programming and algorithms",
+        "URL": "https://www.codecademy.com"
+    },
+    {
+        "Grade Level": "College",
+        "Subject": "Computer Science",
+        "Description": "Data structures, AI, and machine learning",
+        "URL": "https://www.coursera.org/courses?query=computer%20science"
+    }
+]

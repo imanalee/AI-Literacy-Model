@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+form {
+    margin: 20px 0;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form select, form button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#resources {
+    margin-top: 20px;
+}
+
+.resource {
+    background-color: #f9f9f9;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+footer {
+    background-color: #white;
+    color: #333; /* Dark Blue for All Rights Reserved */
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
