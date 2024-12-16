@@ -1,1 +1,1 @@
-# AI-Literacy-Model
+# AI-Literacy-Models
