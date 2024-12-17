@@ -5,54 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Literacy Model</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: white; color: black; font-family: Arial, sans-serif;">
-    <header style="text-align: center; padding: 20px 0;">
-        <h1 style="margin: 0; font-size: 2em;">Welcome to the AI Literacy Model</h1>
-        <h1 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5em; color: white; margin: 10px 0; background-color: black; display: inline-block; padding: 5px 15px;">
-            اے آئی لٹریسی ماڈل میں خوش آمدید
-        </h1>
-        <nav style="margin-top: 20px;">
-            <ul style="list-style: none; display: flex; justify-content: center; padding: 0; margin: 0;">
-                <li style="margin: 0 15px;"><a href="#" style="text-decoration: none; color: black;">Home</a></li>
-                <li style="margin: 0 15px;"><a href="#" style="text-decoration: none; color: black;">Resources</a></li>
-                <li style="margin: 0 15px;"><a href="#" style="text-decoration: none; color: black;">About</a></li>
-            </ul>
-        </nav>
+<body>
+    <header>
+        <h1>Welcome to the AI Literacy Model</h1>
+        <h1 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5em; color: white; margin: 0;">اے آئی لٹریسی ماڈل میں خوش آمدید</h1>
+        <p>Bridging the education gap with free, personalized resources</p>
     </header>
-
-    <section style="text-align: center; padding: 40px;">
-        <h2 style="margin-bottom: 20px;">Welcome to the AI Literacy Model!</h2>
-        <p style="margin-bottom: 30px;">Helping schools learn AI with fun resources.</p>
-
-        <h3 style="margin-bottom: 20px;">Find Learning Resources</h3>
-        <form id="searchForm" style="margin-bottom: 30px;">
-            <label for="gradeLevel" style="margin-right: 10px;">Grade Level:</label>
-            <select id="gradeLevel" style="margin-right: 20px;">
-                <option value="Primary">Primary</option>
-                <option value="Middle">Middle</option>
-                <option value="Secondary">Secondary</option>
-                <option value="College">College</option>
-            </select>
-
-            <label for="subject" style="margin-right: 10px;">Subject:</label>
-            <select id="subject" style="margin-right: 20px;">
-                <option value="Math">Math</option>
-                <option value="English">English</option>
-                <option value="Computer Science">Computer Science</option>
-            </select>
-
-            <button type="button" id="searchButton" style="padding: 5px 10px; cursor: pointer;">Search Resources</button>
-        </form>
-
-        <div id="resources" style="margin-top: 30px;"></div>
-    </section>
-
-    <footer style="text-align: center; padding: 10px 0; font-size: 0.9em; color: darkblue;">
+    <main>
+        <section class="navigation">
+            <a href="primary.html" class="nav-btn">Primary (پرائمری)</a>
+            <a href="secondary.html" class="nav-btn">Secondary (ثانوی)</a>
+            <a href="middle.html" class="nav-btn">Middle (مڈل)</a>
+            <a href="college.html" class="nav-btn">College (کالج)</a>
+        </section>
+    </main>
+    <footer>
         <p>&copy; 2024 AI Literacy Model. All Rights Reserved. | Made by Iman Alee Ghaznavi</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

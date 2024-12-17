@@ -1,98 +1,69 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    line-height: 1.6;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
 }
 
 header {
-    background-color: #000;
-    color: #fff;
+    text-align: center;
     padding: 20px;
-}
-
-header h1 {
-    font-size: 2rem;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-form {
-    margin: 20px 0;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    font-weight: bold;
-}
-
-form select, form button {
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#resources {
-    margin-top: 20px;
-}
-
-.resource {
-    background-color: #f9f9f9;
-    margin: 15px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 footer {
-    background-color: #white;
-    color: #333; /* Dark Blue for All Rights Reserved */
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-footer p {
-    font-size: 0.9rem;
+main {
+    padding: 20px;
+    text-align: center;
 }
 
+/* Navigation Buttons */
+.nav-btn {
+    display: inline-block;
+    margin: 15px; /* Increased spacing for better layout */
+    padding: 20px 40px; /* Larger padding for a more prominent button */
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px; /* Smoother rounded corners */
+    font-size: 1.5em; /* Increased font size */
+    font-weight: bold; /* Enhanced button text weight */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover animation */
+}
+
+.nav-btn:hover {
+    background-color: #444444;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Resource Links */
+#resource-list h2 {
+    margin-top: 20px;
+    color: #000000;
+}
+
+#resource-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#resource-list li a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#resource-list li a:hover {
+    text-decoration: underline;
+}
