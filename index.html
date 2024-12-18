@@ -5,11 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Literacy Model</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Body Styling */
+        body {
+            display: flex;
+            flex-direction: column; /* Makes header, main, and footer stack vertically */
+            min-height: 100vh; /* Ensures the page takes full viewport height */
+            margin: 0;
+            background-color: #121212; /* Deep black */
+            color: #e0e0e0; /* Light grey for contrast */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            color: #a78bfa; /* Lavender Blue */
+            font-size: 2.5em; /* Slightly larger heading */
+        }
+
+        header h1 + h1 {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2em;
+            color: white; /* Changed to white */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #80d8ff; /* Light blue */
+        }
+
+        /* Main Section */
+        main {
+            flex: 1; /* Takes up remaining space between header and footer */
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px; /* Increased gap for better spacing */
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: white;
+            background-color: #a78bfa; /* Lavender blue */
+            padding: 20px 35px; /* Increased size */
+            font-size: 1.5em; /* Larger text */
+            border-radius: 10px; /* Rounded buttons */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 5px 15px rgba(167, 139, 250, 0.3); /* Subtle shadow */
+        }
+
+        .nav-btn:hover {
+            background-color: #80d8ff; /* Light blue on hover */
+            transform: scale(1.1); /* More pronounced pop-up effect */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1em;
+            color: #80d8ff; /* Light blue */
+            background-color: #1f1f1f; /* Slightly lighter black */
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to the AI Literacy Model</h1>
-        <h1 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5em; color: white; margin: 0;">اے آئی لٹریسی ماڈل میں خوش آمدید</h1>
+        <h1 style="font-family: 'Noto Nastaliq Urdu', serif;">اے آئی لٹریسی ماڈل میں خوش آمدید</h1>
         <p>Bridging the education gap with free, personalized resources</p>
     </header>
     <main>
@@ -23,6 +100,5 @@
     <footer>
         <p>&copy; 2024 AI Literacy Model. All Rights Reserved. | Made by Iman Alee Ghaznavi</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
