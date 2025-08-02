@@ -41,6 +41,15 @@
   header nav a:hover {
     color: #60a5fa;
   }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .hero {
     background: linear-gradient(135deg, #1e1e2e, #2d2d44, #3b1d5c);
     text-align: center;
@@ -49,10 +58,6 @@
     margin: 2rem auto;
     max-width: 900px;
     box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
-    transition: transform 0.4s ease;
-  }
-  .hero:hover {
-    transform: scale(1.03);
   }
   .hero h1 {
     font-size: 3rem;
@@ -71,10 +76,6 @@
     color: #c084fc;
     text-align: center;
     margin: 3rem 0 1rem;
-    transition: transform 0.3s ease;
-  }
-  .section-title:hover {
-    transform: scale(1.05);
   }
   .info-box {
     background: #1e293b;
@@ -84,10 +85,6 @@
     margin: 1rem auto;
     max-width: 800px;
     color: #f1f5f9;
-    transition: transform 0.3s ease;
-  }
-  .info-box:hover {
-    transform: scale(1.02);
   }
   .categories {
     display: grid;
@@ -144,34 +141,34 @@
   </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero fade-in" id="home">
   <h1 id="welcome-text">Welcome to AI Literacy Model</h1>
   <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education. <br> <span class="text-purple-300">اے آئی لٹریسی ماڈل میں خوش آمدید</span></p>
 </section>
 
-<h2 class="section-title" id="about">Our Mission, Vision & Goals</h2>
-<div class="info-box" id="mission-text">
+<h2 class="section-title fade-in" id="about">Our Mission, Vision & Goals</h2>
+<div class="info-box fade-in" id="mission-text">
   <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age. <br> <span class="text-purple-300">ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</span></p>
 </div>
 
-<h2 class="section-title" id="categories">Categories</h2>
-<div class="categories">
+<h2 class="section-title fade-in" id="categories">Categories</h2>
+<div class="categories fade-in">
   <div class="category-card"><a href="primary.html">Primary<br><span>ابتدائی</span></a></div>
   <div class="category-card"><a href="middle.html">Middle<br><span>درمیانہ</span></a></div>
   <div class="category-card"><a href="secondary.html">Secondary<br><span>ثانوی</span></a></div>
   <div class="category-card"><a href="college.html">College<br><span>کالج</span></a></div>
 </div>
 
-<h2 class="section-title" id="faq">FAQ</h2>
-<div class="info-box">
+<h2 class="section-title fade-in" id="faq">FAQ</h2>
+<div class="info-box fade-in">
   <p><strong>Q:</strong> Why did you create AI Literacy Model?<br><strong>A:</strong> To empower children from underserved communities with AI and digital literacy skills.</p>
   <p><strong>Q:</strong> Is this platform free to use?<br><strong>A:</strong> Yes, all resources are completely free and accessible to everyone.</p>
   <p><strong>Q:</strong> Do you offer resources in multiple languages?<br><strong>A:</strong> Yes, currently we support English and Urdu.</p>
   <p><strong>Q:</strong> How can I contact you?<br><strong>A:</strong> You can email us at futuretechtrendss@gmail.com.</p>
 </div>
 
-<h2 class="section-title">Contact Us</h2>
-<div class="info-box">
+<h2 class="section-title fade-in">Contact Us</h2>
+<div class="info-box fade-in">
   <p><strong>Email:</strong> futuretechtrendss@gmail.com</p>
   <p><strong>Location:</strong> Lahore, Punjab</p>
   <p>A Project of Future Tech Trends</p>
@@ -230,6 +227,18 @@ langToggle.addEventListener('click', () => {
   document.getElementById('welcome-desc').innerHTML = isUrdu ? 'کم وسائل والے بچوں کو تعلیم اور اے آئی وسائل فراہم کر کے بااختیار بنانا۔' : 'Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education.';
   document.getElementById('mission-text').innerHTML = isUrdu ? '<p>ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</p>' : '<p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age.</p>';
 });
+
+// Scroll-based animation
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+fadeEls.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
