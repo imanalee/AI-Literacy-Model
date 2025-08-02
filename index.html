@@ -42,18 +42,22 @@
     color: #60a5fa;
   }
   .hero {
-    background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+    background: linear-gradient(135deg, #1e1e2e, #2d2d44, #3b1d5c);
     text-align: center;
     padding: 4rem 1rem;
     border-radius: 1rem;
     margin: 2rem auto;
     max-width: 900px;
-    box-shadow: 0 0 40px rgba(96, 165, 250, 0.2);
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+    transition: transform 0.4s ease;
+  }
+  .hero:hover {
+    transform: scale(1.03);
   }
   .hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #60a5fa;
+    color: #a78bfa;
     margin-bottom: 1rem;
   }
   .hero p {
@@ -64,18 +68,26 @@
   .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #93c5fd;
+    color: #c084fc;
     text-align: center;
     margin: 3rem 0 1rem;
+    transition: transform 0.3s ease;
+  }
+  .section-title:hover {
+    transform: scale(1.05);
   }
   .info-box {
     background: #1e293b;
     padding: 1.5rem;
     border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+    box-shadow: 0 0 25px rgba(167, 139, 250, 0.3);
     margin: 1rem auto;
     max-width: 800px;
     color: #f1f5f9;
+    transition: transform 0.3s ease;
+  }
+  .info-box:hover {
+    transform: scale(1.02);
   }
   .categories {
     display: grid;
@@ -90,10 +102,11 @@
     padding: 1.5rem;
     border-radius: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
   }
   .category-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(147, 197, 253, 0.4);
+    box-shadow: 0 0 35px rgba(147, 197, 253, 0.5);
   }
   footer {
     text-align: center;
@@ -104,7 +117,7 @@
   }
   .lang-toggle {
     margin-left: 1rem;
-    background: #2563eb;
+    background: #7c3aed;
     color: #fff;
     padding: 0.4rem 0.8rem;
     border-radius: 8px;
@@ -113,14 +126,14 @@
     transition: background 0.3s;
   }
   .lang-toggle:hover {
-    background: #1e40af;
+    background: #5b21b6;
   }
 </style>
 </head>
 <body>
 <canvas id="bgParticles"></canvas>
 <header>
-  <h1 class="text-xl font-bold text-blue-400">AI Literacy Model</h1>
+  <h1 class="text-xl font-bold text-purple-400">AI Literacy Model</h1>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -133,12 +146,12 @@
 
 <section class="hero" id="home">
   <h1 id="welcome-text">Welcome to AI Literacy Model</h1>
-  <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education. <br> <span class="text-blue-300">اے آئی لٹریسی ماڈل میں خوش آمدید</span></p>
+  <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education. <br> <span class="text-purple-300">اے آئی لٹریسی ماڈل میں خوش آمدید</span></p>
 </section>
 
 <h2 class="section-title" id="about">Our Mission, Vision & Goals</h2>
 <div class="info-box" id="mission-text">
-  <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age. <br> <span class="text-blue-300">ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</span></p>
+  <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age. <br> <span class="text-purple-300">ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</span></p>
 </div>
 
 <h2 class="section-title" id="categories">Categories</h2>
@@ -151,12 +164,21 @@
 
 <h2 class="section-title" id="faq">FAQ</h2>
 <div class="info-box">
-  <p><strong>Q:</strong> What is AI Literacy Model?<br><strong>A:</strong> A platform to provide free AI and education resources for students.</p>
-  <p><strong>Q:</strong> Are resources free?<br><strong>A:</strong> Yes, completely free.</p>
+  <p><strong>Q:</strong> Why did you create AI Literacy Model?<br><strong>A:</strong> To empower children from underserved communities with AI and digital literacy skills.</p>
+  <p><strong>Q:</strong> Is this platform free to use?<br><strong>A:</strong> Yes, all resources are completely free and accessible to everyone.</p>
+  <p><strong>Q:</strong> Do you offer resources in multiple languages?<br><strong>A:</strong> Yes, currently we support English and Urdu.</p>
+  <p><strong>Q:</strong> How can I contact you?<br><strong>A:</strong> You can email us at futuretechtrendss@gmail.com.</p>
+</div>
+
+<h2 class="section-title">Contact Us</h2>
+<div class="info-box">
+  <p><strong>Email:</strong> futuretechtrendss@gmail.com</p>
+  <p><strong>Location:</strong> Lahore, Punjab</p>
+  <p>A Project of Future Tech Trends</p>
 </div>
 
 <footer id="contact">
-  © 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com
+  © 2025 AI Literacy Model | A Project of Future Tech Trends
 </footer>
 
 <script>
@@ -167,22 +189,23 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 120; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
     r: Math.random() * 2 + 1,
     dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5
+    dy: (Math.random() - 0.5) * 0.5,
+    color: Math.random() > 0.5 ? '#60a5fa' : '#a78bfa'
   });
 }
 
 function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#60a5fa';
   particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
     ctx.fill();
     p.x += p.dx;
     p.y += p.dy;
