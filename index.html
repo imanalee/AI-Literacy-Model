@@ -1,185 +1,73 @@
-<!-- Adding resource pages for Primary, Middle, Secondary, College with consistent dark AI theme -->
-
-<!-- primary.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primary Resources - AI Literacy Model</title>
+<title>AI Literacy Model</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
  body {font-family: 'Poppins', sans-serif; background-color: #000; color: #fff;}
- .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out;}
- .card:hover {transform: scale(1.05);}
- a {color: #ffccff; text-decoration: underline;}
- header {background: #1a1a1a;}
+ header nav a {transition: color 0.3s ease, text-shadow 0.3s ease;}
+ header nav a:hover {color: #ffccff; text-shadow: 0 0 8px #ffccff;}
+ .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;}
+ .card:hover {transform: scale(1.05); box-shadow: 0 0 15px #a855f7, 0 0 30px #9333ea;}
 </style>
 </head>
 <body>
- <header class="text-center py-6 text-purple-300 text-3xl font-bold">Primary Level Resources</header>
- <section class="max-w-4xl mx-auto grid gap-8 p-8">
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Maths</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a></li>
-      <li><a href="https://www.savemyexams.co.uk" target="_blank">Save My Exams</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">English</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/ela" target="_blank">Khan Academy ELA</a></li>
-      <li><a href="https://learnenglish.britishcouncil.org" target="_blank">British Council Learn English</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Computer Science</h2>
-    <ul>
-      <li><a href="https://scratch.mit.edu" target="_blank">Scratch (MIT)</a></li>
-      <li><a href="https://code.org" target="_blank">Code.org</a></li>
-    </ul>
-  </div>
- </section>
- <footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model</footer>
-</body>
-</html>
+<header class="bg-gray-900 py-4 px-6 flex justify-between items-center">
+  <h1 class="text-2xl font-bold text-purple-400">AI Literacy Model</h1>
+  <nav class="space-x-6 text-lg">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#categories">Categories</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<!-- middle.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Middle Resources - AI Literacy Model</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
- body {font-family: 'Poppins', sans-serif; background-color: #000; color: #fff;}
- .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out;}
- .card:hover {transform: scale(1.05);}
- a {color: #ffccff; text-decoration: underline;}
- header {background: #1a1a1a;}
-</style>
-</head>
-<body>
- <header class="text-center py-6 text-purple-300 text-3xl font-bold">Middle Level Resources</header>
- <section class="max-w-4xl mx-auto grid gap-8 p-8">
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Maths</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a></li>
-      <li><a href="https://www.savemyexams.co.uk" target="_blank">Save My Exams</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">English</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/ela" target="_blank">Khan Academy ELA</a></li>
-      <li><a href="https://learnenglish.britishcouncil.org" target="_blank">British Council Learn English</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Computer Science</h2>
-    <ul>
-      <li><a href="https://scratch.mit.edu" target="_blank">Scratch (MIT)</a></li>
-      <li><a href="https://code.org" target="_blank">Code.org</a></li>
-    </ul>
-  </div>
- </section>
- <footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model</footer>
-</body>
-</html>
+<section id="home" class="text-center py-12">
+  <h2 class="text-4xl font-bold text-purple-300 mb-6">Welcome to AI Literacy Model</h2>
+  <p class="max-w-3xl mx-auto text-gray-300 mb-8">We aim to bridge the gap between underprivileged students and AI education through free resources and awareness.</p>
+</section>
 
-<!-- secondary.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Secondary Resources - AI Literacy Model</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
- body {font-family: 'Poppins', sans-serif; background-color: #000; color: #fff;}
- .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out;}
- .card:hover {transform: scale(1.05);}
- a {color: #ffccff; text-decoration: underline;}
- header {background: #1a1a1a;}
-</style>
-</head>
-<body>
- <header class="text-center py-6 text-purple-300 text-3xl font-bold">Secondary Level Resources</header>
- <section class="max-w-4xl mx-auto grid gap-8 p-8">
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Maths</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a></li>
-      <li><a href="https://www.savemyexams.co.uk" target="_blank">Save My Exams</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">English</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/ela" target="_blank">Khan Academy ELA</a></li>
-      <li><a href="https://learnenglish.britishcouncil.org" target="_blank">British Council Learn English</a></li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Computer Science</h2>
-    <ul>
-      <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
-      <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
-    </ul>
-  </div>
- </section>
- <footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model</footer>
-</body>
-</html>
+<section id="about" class="max-w-4xl mx-auto text-center py-10">
+  <h2 class="text-3xl font-bold text-purple-400 mb-6">Our Mission, Vision & Goals</h2>
+  <p class="text-gray-300">As a privileged student, I realized children lacking resources also lack awareness. AI Literacy Model was created to empower them through quality education and bridge the digital divide.</p>
+</section>
 
-<!-- college.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>College Resources - AI Literacy Model</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
- body {font-family: 'Poppins', sans-serif; background-color: #000; color: #fff;}
- .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out;}
- .card:hover {transform: scale(1.05);}
- a {color: #ffccff; text-decoration: underline;}
- header {background: #1a1a1a;}
-</style>
-</head>
-<body>
- <header class="text-center py-6 text-purple-300 text-3xl font-bold">College Level Resources</header>
- <section class="max-w-4xl mx-auto grid gap-8 p-8">
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Maths</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a></li>
-      <li><a href="https://www.savemyexams.co.uk" target="_blank">Save My Exams</a></li>
-    </ul>
+<section id="categories" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 p-8">
+  <div class="card text-center">
+    <a href="primary.html" class="block text-xl font-semibold">Primary<br><span class="text-sm">ابتدائی</span></a>
   </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">English</h2>
-    <ul>
-      <li><a href="https://www.khanacademy.org/ela" target="_blank">Khan Academy ELA</a></li>
-      <li><a href="https://learnenglish.britishcouncil.org" target="_blank">British Council Learn English</a></li>
-    </ul>
+  <div class="card text-center">
+    <a href="middle.html" class="block text-xl font-semibold">Middle<br><span class="text-sm">درمیانہ</span></a>
   </div>
-  <div class="card">
-    <h2 class="text-2xl font-bold mb-4">Computer Science</h2>
-    <ul>
-      <li><a href="https://www.coursera.org" target="_blank">Coursera (Free Courses)</a></li>
-      <li><a href="https://ocw.mit.edu" target="_blank">MIT OpenCourseWare</a></li>
-    </ul>
+  <div class="card text-center">
+    <a href="secondary.html" class="block text-xl font-semibold">Secondary<br><span class="text-sm">ثانوی</span></a>
   </div>
- </section>
- <footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model</footer>
+  <div class="card text-center">
+    <a href="college.html" class="block text-xl font-semibold">College<br><span class="text-sm">کالج</span></a>
+  </div>
+</section>
+
+<section id="faq" class="max-w-4xl mx-auto p-8">
+  <h2 class="text-3xl font-bold text-center text-purple-400 mb-6">Frequently Asked Questions</h2>
+  <div class="space-y-4">
+    <details class="bg-gray-800 p-4 rounded-lg">
+      <summary class="cursor-pointer text-lg font-semibold">What is AI Literacy Model?</summary>
+      <p class="mt-2 text-gray-300">It’s a project to bridge the gap between underprivileged students and AI education through free resources and awareness.</p>
+    </details>
+    <details class="bg-gray-800 p-4 rounded-lg">
+      <summary class="cursor-pointer text-lg font-semibold">Are these resources free?</summary>
+      <p class="mt-2 text-gray-300">Yes, all linked resources are free and accessible to everyone.</p>
+    </details>
+    <details class="bg-gray-800 p-4 rounded-lg">
+      <summary class="cursor-pointer text-lg font-semibold">Do you offer resources in Urdu?</summary>
+      <p class="mt-2 text-gray-300">Yes, our platform supports Urdu and English for easier access.</p>
+    </details>
+  </div>
+</section>
+
+<footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com</footer>
 </body>
 </html>
