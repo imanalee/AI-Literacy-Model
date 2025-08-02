@@ -7,33 +7,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  body { font-family: 'Poppins', sans-serif; background: #0f0f0f; color: #e0e0e0; overflow-x: hidden; position: relative; }
-  canvas#bgParticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0f0f0f; }
-  header { background: #111827; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 1rem; position: sticky; top: 0; z-index: 50; }
-  header nav { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-  header nav a { margin: 0.5rem; font-weight: 500; transition: color 0.3s; display: inline-block; }
+  body { font-family: 'Poppins', sans-serif; background: #0f0f0f; color: #e0e0e0; overflow-x: hidden; }
+  canvas#bgParticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+  header { background: #111827; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; position: sticky; top: 0; z-index: 50; }
+  header nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+  header nav a { font-weight: 500; transition: color 0.3s; }
   header nav a:hover { color: #60a5fa; }
-  .logo-img { height: 60px; width: 60px; border-radius: 50%; margin-right: 10px; border: 2px solid transparent; transition: box-shadow 0.3s, border-color 0.3s; }
-  .logo-img:hover { box-shadow: 0 0 15px #9333ea, 0 0 30px #60a5fa; border-color: #9333ea; }
-  .hero { background: linear-gradient(135deg, #1e1e2e, #2d2d44, #3b1d5c); text-align: center; padding: 2rem 1rem; border-radius: 1rem; margin: 1rem auto; max-width: 95%; box-shadow: 0 0 30px rgba(96, 165, 250, 0.3); }
-  .hero h1 { font-size: 2rem; font-weight: 700; color: #a78bfa; margin-bottom: 0.5rem; }
-  .hero p { font-size: 1rem; line-height: 1.6; color: #d1d5db; }
-  .section-title { font-size: 1.5rem; font-weight: 700; color: #c084fc; text-align: center; margin: 2rem 0 1rem; }
-  .info-box { background: #1e293b; padding: 1rem; border-radius: 1rem; margin: 1rem auto; width: 90%; color: #f1f5f9; font-size: 0.9rem; }
-  .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1rem auto; width: 90%; }
-  .category-card { background: #1e1e2e; text-align: center; padding: 1rem; border-radius: 1rem; color: #fff; font-size: 0.9rem; }
-  footer { text-align: center; padding: 1rem; background: #111827; color: #9ca3af; font-size: 0.8rem; margin-top: 1rem; }
-  .lang-toggle { background: #7c3aed; color: #fff; padding: 0.4rem 0.8rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
+  .logo-img { height: 70px; width: 70px; border-radius: 50%; margin-right: 10px; transition: all 0.3s ease; }
+  .logo-img:hover { box-shadow: 0 0 20px #9333ea, 0 0 35px #60a5fa; }
+
+  .hero { max-width: 1100px; margin: 2rem auto; padding: 4rem 2rem; text-align: center; border-radius: 1rem; background: linear-gradient(135deg, #1e1e2e, #2d2d44, #3b1d5c); box-shadow: 0 0 40px rgba(96,165,250,0.3); transition: transform 0.3s ease; }
+  .hero:hover { transform: scale(1.02); }
+  .hero h1 { font-size: 3rem; color: #a78bfa; margin-bottom: 1rem; }
+  .hero p { font-size: 1.3rem; color: #d1d5db; }
+
+  .section-title { text-align: center; font-size: 2rem; font-weight: bold; margin: 3rem 0 1rem; color: #c084fc; }
+  .info-box { max-width: 900px; margin: 1rem auto; padding: 1.5rem; background: #1e293b; border-radius: 1rem; box-shadow: 0 0 25px rgba(167,139,250,0.3); font-size: 1rem; transition: transform 0.3s ease; }
+  .info-box:hover { transform: scale(1.02); }
+
+  .categories { max-width: 1000px; margin: 2rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .category-card { background: #1e1e2e; text-align: center; padding: 2rem 1rem; border-radius: 1rem; color: #fff; font-size: 1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .category-card:hover { transform: translateY(-8px); box-shadow: 0 0 35px rgba(147,197,253,0.5); }
+
+  footer { text-align: center; padding: 2rem 1rem; background: #111827; color: #9ca3af; font-size: 0.9rem; margin-top: 2rem; }
+  .lang-toggle { background: #7c3aed; color: #fff; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
   .lang-toggle:hover { background: #5b21b6; }
-  @media(max-width:768px){ .hero h1{ font-size:1.5rem;} .hero p{ font-size:0.9rem;} header{flex-direction:column;align-items:flex-start;} }
+
+  @media(max-width:1024px){ .hero h1{font-size:2.3rem;} .hero p{font-size:1.1rem;} header{flex-direction:column;gap:0.8rem;text-align:center;} header nav{justify-content:center;} }
+  @media(max-width:768px){ .hero{padding:2.5rem 1rem;} .hero h1{font-size:1.8rem;} .hero p{font-size:1rem;} }
 </style>
 </head>
 <body>
 <canvas id="bgParticles"></canvas>
 <header>
-  <div class="flex items-center mb-2">
+  <div class="flex items-center">
     <img src="logo.png" alt="AI Literacy Model Logo" class="logo-img">
-    <h1 class="text-lg font-bold text-purple-400" id="header-title">AI Literacy Model</h1>
+    <h1 class="text-xl font-bold text-purple-400" id="header-title">AI Literacy Model</h1>
   </div>
   <nav>
     <a href="#home" id="nav-home">Home</a>
@@ -44,14 +53,17 @@
     <button class="lang-toggle" id="langToggle">اردو</button>
   </nav>
 </header>
+
 <section class="hero" id="home">
   <h1 id="welcome-text">Welcome to AI Literacy Model</h1>
   <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education.</p>
 </section>
+
 <h2 class="section-title" id="about-title">Our Mission, Vision & Goals</h2>
 <div class="info-box" id="mission-text">
   <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age.</p>
 </div>
+
 <h2 class="section-title" id="categories-title">Categories</h2>
 <div class="categories">
   <div class="category-card"><a href="primary.html" id="cat-primary">Primary</a></div>
@@ -59,6 +71,7 @@
   <div class="category-card"><a href="secondary.html" id="cat-secondary">Secondary</a></div>
   <div class="category-card"><a href="college.html" id="cat-college">College</a></div>
 </div>
+
 <h2 class="section-title" id="faq-title">FAQ</h2>
 <div class="info-box" id="faq-box">
   <p><strong>Q:</strong> Why did you create AI Literacy Model?<br><strong>A:</strong> To empower children from underserved communities with AI and digital literacy skills.</p>
@@ -66,24 +79,26 @@
   <p><strong>Q:</strong> Do you offer resources in multiple languages?<br><strong>A:</strong> Yes, currently we support English and Urdu.</p>
   <p><strong>Q:</strong> How can I contact you?<br><strong>A:</strong> You can email us at futuretechtrendss@gmail.com.</p>
 </div>
+
 <h2 class="section-title" id="contact-title">Contact Us</h2>
 <div class="info-box" id="contact-box">
   <p><strong>Email:</strong> futuretechtrendss@gmail.com</p>
   <p><strong>Location:</strong> Lahore, Punjab</p>
   <p>A Project of Future Tech Trends</p>
 </div>
+
 <footer id="contact">© 2025 AI Literacy Model | A Project of Future Tech Trends</footer>
+
 <script>
-// Particle background
-const canvas = document.getElementById('bgParticles');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particles=[];for(let i=0;i<120;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2,speedX:(Math.random()-0.5)*1,speedY:(Math.random()-0.5)*1});}
+// Particle Background
+const canvas=document.getElementById('bgParticles');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;let particles=[];for(let i=0;i<150;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2,speedX:(Math.random()-0.5)*1,speedY:(Math.random()-0.5)*1});}
 function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#9333ea';particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();});}
 function moveParticles(){particles.forEach(p=>{p.x+=p.speedX;p.y+=p.speedY;if(p.x<0||p.x>canvas.width)p.speedX*=-1;if(p.y<0||p.y>canvas.height)p.speedY*=-1;});}
 function animate(){drawParticles();moveParticles();requestAnimationFrame(animate);}animate();
+
+// Language Toggle
 const translations={ur:{headerTitle:'اے آئی لٹریسی ماڈل',navHome:'ہوم',navAbout:'ہمارے بارے میں',navCategories:'زمرے',navFaq:'عمومی سوالات',navContact:'رابطہ',welcomeText:'اے آئی لٹریسی ماڈل میں خوش آمدید',welcomeDesc:'طلباء کو مفت AI وسائل کے ساتھ بااختیار بنانا اور پسماندہ کمیونٹیز اور جدید تعلیم کے درمیان خلا کو پُر کرنا۔',aboutTitle:'ہمارا مشن، وژن اور مقاصد',missionText:'ہم معیاری تعلیمی وسائل فراہم کرنے کا مقصد رکھتے ہیں تاکہ پسماندہ طلباء ڈیجیٹل دور میں ترقی کر سکیں۔',categoriesTitle:'زمرے',catPrimary:'ابتدائی',catMiddle:'درمیانہ',catSecondary:'ثانوی',catCollege:'کالج',faqTitle:'عمومی سوالات',contactTitle:'رابطہ کریں'},en:{headerTitle:'AI Literacy Model',navHome:'Home',navAbout:'About',navCategories:'Categories',navFaq:'FAQ',navContact:'Contact',welcomeText:'Welcome to AI Literacy Model',welcomeDesc:'Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education.',aboutTitle:'Our Mission, Vision & Goals',missionText:'We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age.',categoriesTitle:'Categories',catPrimary:'Primary',catMiddle:'Middle',catSecondary:'Secondary',catCollege:'College',faqTitle:'FAQ',contactTitle:'Contact Us'}};
+
 const langToggle=document.getElementById('langToggle');let currentLang='en';langToggle.addEventListener('click',()=>{currentLang=currentLang==='en'?'ur':'en';const t=translations[currentLang];document.getElementById('header-title').textContent=t.headerTitle;document.getElementById('nav-home').textContent=t.navHome;document.getElementById('nav-about').textContent=t.navAbout;document.getElementById('nav-categories').textContent=t.navCategories;document.getElementById('nav-faq').textContent=t.navFaq;document.getElementById('nav-contact').textContent=t.navContact;document.getElementById('welcome-text').textContent=t.welcomeText;document.getElementById('welcome-desc').textContent=t.welcomeDesc;document.getElementById('about-title').textContent=t.aboutTitle;document.getElementById('mission-text').textContent=t.missionText;document.getElementById('categories-title').textContent=t.categoriesTitle;document.getElementById('cat-primary').textContent=t.catPrimary;document.getElementById('cat-middle').textContent=t.catMiddle;document.getElementById('cat-secondary').textContent=t.catSecondary;document.getElementById('cat-college').textContent=t.catCollege;document.getElementById('faq-title').textContent=t.faqTitle;document.getElementById('contact-title').textContent=t.contactTitle;langToggle.textContent=currentLang==='en'?'اردو':'EN';});
 </script>
 </body>
