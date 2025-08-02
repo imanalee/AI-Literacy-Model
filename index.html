@@ -4,69 +4,209 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Literacy Model</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
- body {font-family: 'Poppins', sans-serif; color: #fff; background-color: #000; overflow-x: hidden;}
- header nav a {transition: color 0.3s ease, text-shadow 0.3s ease;}
- header nav a:hover {color: #ffccff; text-shadow: 0 0 8px #ffccff;}
- .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;}
- .card:hover {transform: scale(1.05); box-shadow: 0 0 15px #a855f7, 0 0 30px #9333ea;}
- .toggle-btn {background: #9333ea; color: white; padding: 6px 14px; border-radius: 8px; cursor: pointer; transition: background 0.3s;}
- .toggle-btn:hover {background: #a855f7;}
- .animated-bg {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(92,0,179,0.3), transparent 50%), radial-gradient(circle at 80% 80%, rgba(0,204,255,0.3), transparent 50%); animation: moveBg 10s infinite alternate; z-index: -1;}
- @keyframes moveBg {0% {transform: translate(0, 0);}100% {transform: translate(-50px, 50px);}}
- .glow-text {animation: glow 2s ease-in-out infinite alternate;}
- @keyframes glow {0% {text-shadow: 0 0 10px #a855f7;}100% {text-shadow: 0 0 20px #ffccff;}}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    position: relative;
+  }
+  canvas#bgParticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #0f0f0f;
+  }
+  header {
+    background: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  header nav a {
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  header nav a:hover {
+    color: #60a5fa;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.2);
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1d5db;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #93c5fd;
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+  .info-box {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+    margin: 1rem auto;
+    max-width: 800px;
+    color: #f1f5f9;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 900px;
+  }
+  .category-card {
+    background: #1e1e2e;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(147, 197, 253, 0.4);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #111827;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+  .lang-toggle {
+    margin-left: 1rem;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  .lang-toggle:hover {
+    background: #1e40af;
+  }
 </style>
 </head>
 <body>
-<div class="animated-bg"></div>
-<header class="bg-gray-900 py-4 px-6 flex justify-between items-center">
-  <h1 class="text-xl font-bold text-purple-400">AI Literacy Model | <span class="text-sm">اے آئی لٹریسی ماڈل</span></h1>
-  <div class="flex space-x-4 items-center">
-    <nav class="space-x-6 text-lg">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#categories">Categories</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button id="lang-toggle" class="toggle-btn">اردو</button>
-  </div>
+<canvas id="bgParticles"></canvas>
+<header>
+  <h1 class="text-xl font-bold text-blue-400">AI Literacy Model</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#categories">Categories</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <button class="lang-toggle" id="langToggle">اردو</button>
+  </nav>
 </header>
 
-<section id="home" class="text-center py-12">
-  <h2 class="text-5xl font-bold text-purple-300 mb-6 glow-text">Welcome to AI Literacy Model<br><span class="text-2xl text-gray-400">اے آئی لٹریسی ماڈل میں خوش آمدید</span></h2>
-  <p class="max-w-3xl mx-auto text-gray-300 mb-8 bg-gray-800 rounded-lg p-4">We aim to bridge the gap between underprivileged students and AI education through free resources and awareness.<br><span class="block mt-2 text-gray-400">ہم کم وسائل والے طلباء اور اے آئی تعلیم کے درمیان فرق کو پُر کرنے کے لیے مفت وسائل اور آگاہی فراہم کرتے ہیں۔</span></p>
+<section class="hero" id="home">
+  <h1 id="welcome-text">Welcome to AI Literacy Model</h1>
+  <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education. <br> <span class="text-blue-300">اے آئی لٹریسی ماڈل میں خوش آمدید</span></p>
 </section>
 
-<section id="about" class="max-w-4xl mx-auto text-center py-10">
-  <h2 class="text-4xl font-bold text-purple-400 mb-6">Our Mission, Vision & Goals<br><span class="text-lg text-gray-400">ہمارا مشن، وژن اور مقاصد</span></h2>
-  <p class="text-gray-300 bg-gray-800 rounded-lg p-4">As a privileged student, I realized children lacking resources also lack awareness. AI Literacy Model was created to empower them through quality education and bridge the digital divide.<br><span class="block mt-2 text-gray-400">ایک خوش قسمت طالب علم کے طور پر، میں نے محسوس کیا کہ وسائل کی کمی کے شکار بچوں کو آگاہی کی بھی کمی ہوتی ہے۔ اے آئی لٹریسی ماڈل ان کو معیاری تعلیم کے ذریعے بااختیار بنانے اور ڈیجیٹل خلا کو پُر کرنے کے لیے بنایا گیا۔</span></p>
-</section>
+<h2 class="section-title" id="about">Our Mission, Vision & Goals</h2>
+<div class="info-box" id="mission-text">
+  <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age. <br> <span class="text-blue-300">ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</span></p>
+</div>
 
-<section id="categories" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 p-8">
-  <div class="card text-center"><a href="primary.html" class="block text-xl font-semibold">Primary<br><span class="text-sm">ابتدائی</span></a></div>
-  <div class="card text-center"><a href="middle.html" class="block text-xl font-semibold">Middle<br><span class="text-sm">درمیانہ</span></a></div>
-  <div class="card text-center"><a href="secondary.html" class="block text-xl font-semibold">Secondary<br><span class="text-sm">ثانوی</span></a></div>
-  <div class="card text-center"><a href="college.html" class="block text-xl font-semibold">College<br><span class="text-sm">کالج</span></a></div>
-</section>
+<h2 class="section-title" id="categories">Categories</h2>
+<div class="categories">
+  <div class="category-card"><a href="primary.html">Primary<br><span>ابتدائی</span></a></div>
+  <div class="category-card"><a href="middle.html">Middle<br><span>درمیانہ</span></a></div>
+  <div class="category-card"><a href="secondary.html">Secondary<br><span>ثانوی</span></a></div>
+  <div class="category-card"><a href="college.html">College<br><span>کالج</span></a></div>
+</div>
 
-<section id="faq" class="max-w-4xl mx-auto p-8">
-  <h2 class="text-3xl font-bold text-center text-purple-400 mb-6">Frequently Asked Questions</h2>
-  <div class="space-y-4">
-    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">What is AI Literacy Model?</summary><p class="mt-2 text-gray-300">It’s a project to bridge the gap between underprivileged students and AI education through free resources and awareness.</p></details>
-    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">Are these resources free?</summary><p class="mt-2 text-gray-300">Yes, all linked resources are free and accessible to everyone.</p></details>
-    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">Do you offer resources in Urdu?</summary><p class="mt-2 text-gray-300">Yes, our platform supports Urdu and English for easier access.</p></details>
-  </div>
-</section>
+<h2 class="section-title" id="faq">FAQ</h2>
+<div class="info-box">
+  <p><strong>Q:</strong> What is AI Literacy Model?<br><strong>A:</strong> A platform to provide free AI and education resources for students.</p>
+  <p><strong>Q:</strong> Are resources free?<br><strong>A:</strong> Yes, completely free.</p>
+</div>
 
-<footer id="contact" class="text-center py-6 text-gray-400">© 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com</footer>
+<footer id="contact">
+  © 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com
+</footer>
 
 <script>
- document.getElementById('lang-toggle').addEventListener('click', function(){alert('Language toggle functionality coming soon!');});
+// Particle background
+const canvas = document.getElementById('bgParticles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < 100; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#60a5fa';
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// Language toggle
+const langToggle = document.getElementById('langToggle');
+let isUrdu = false;
+langToggle.addEventListener('click', () => {
+  isUrdu = !isUrdu;
+  document.getElementById('welcome-text').innerText = isUrdu ? 'اے آئی لٹریسی ماڈل میں خوش آمدید' : 'Welcome to AI Literacy Model';
+  document.getElementById('welcome-desc').innerHTML = isUrdu ? 'کم وسائل والے بچوں کو تعلیم اور اے آئی وسائل فراہم کر کے بااختیار بنانا۔' : 'Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education.';
+  document.getElementById('mission-text').innerHTML = isUrdu ? '<p>ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</p>' : '<p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age.</p>';
+});
 </script>
 </body>
 </html>
-
-<!-- Next: Create primary.html, middle.html, secondary.html, college.html with subject-specific free links for Maths, English, and Computer Science -->
