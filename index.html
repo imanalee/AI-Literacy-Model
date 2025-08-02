@@ -1,3 +1,5 @@
+<!-- Updated structure with separate resource pages, animated text, and Urdu toggle -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,67 +9,66 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
- body {font-family: 'Poppins', sans-serif; background-color: #000; color: #fff;}
+ body {font-family: 'Poppins', sans-serif; color: #fff; background-color: #000; overflow-x: hidden;}
  header nav a {transition: color 0.3s ease, text-shadow 0.3s ease;}
  header nav a:hover {color: #ffccff; text-shadow: 0 0 8px #ffccff;}
  .card {background: linear-gradient(135deg, #1f1f3a, #2d0070, #5500a3); border-radius: 16px; padding: 20px; transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;}
  .card:hover {transform: scale(1.05); box-shadow: 0 0 15px #a855f7, 0 0 30px #9333ea;}
+ .toggle-btn {background: #9333ea; color: white; padding: 6px 14px; border-radius: 8px; cursor: pointer; transition: background 0.3s;}
+ .toggle-btn:hover {background: #a855f7;}
+ .animated-bg {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(92,0,179,0.3), transparent 50%), radial-gradient(circle at 80% 80%, rgba(0,204,255,0.3), transparent 50%); animation: moveBg 10s infinite alternate; z-index: -1;}
+ @keyframes moveBg {0% {transform: translate(0, 0);}100% {transform: translate(-50px, 50px);}}
+ .glow-text {animation: glow 2s ease-in-out infinite alternate;}
+ @keyframes glow {0% {text-shadow: 0 0 10px #a855f7;}100% {text-shadow: 0 0 20px #ffccff;}}
 </style>
 </head>
 <body>
+<div class="animated-bg"></div>
 <header class="bg-gray-900 py-4 px-6 flex justify-between items-center">
-  <h1 class="text-2xl font-bold text-purple-400">AI Literacy Model</h1>
-  <nav class="space-x-6 text-lg">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#categories">Categories</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <h1 class="text-xl font-bold text-purple-400">AI Literacy Model | <span class="text-sm">اے آئی لٹریسی ماڈل</span></h1>
+  <div class="flex space-x-4 items-center">
+    <nav class="space-x-6 text-lg">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#categories">Categories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="lang-toggle" class="toggle-btn">اردو</button>
+  </div>
 </header>
 
 <section id="home" class="text-center py-12">
-  <h2 class="text-4xl font-bold text-purple-300 mb-6">Welcome to AI Literacy Model</h2>
-  <p class="max-w-3xl mx-auto text-gray-300 mb-8">We aim to bridge the gap between underprivileged students and AI education through free resources and awareness.</p>
+  <h2 class="text-5xl font-bold text-purple-300 mb-6 glow-text">Welcome to AI Literacy Model<br><span class="text-2xl text-gray-400">اے آئی لٹریسی ماڈل میں خوش آمدید</span></h2>
+  <p class="max-w-3xl mx-auto text-gray-300 mb-8 bg-gray-800 rounded-lg p-4">We aim to bridge the gap between underprivileged students and AI education through free resources and awareness.<br><span class="block mt-2 text-gray-400">ہم کم وسائل والے طلباء اور اے آئی تعلیم کے درمیان فرق کو پُر کرنے کے لیے مفت وسائل اور آگاہی فراہم کرتے ہیں۔</span></p>
 </section>
 
 <section id="about" class="max-w-4xl mx-auto text-center py-10">
-  <h2 class="text-3xl font-bold text-purple-400 mb-6">Our Mission, Vision & Goals</h2>
-  <p class="text-gray-300">As a privileged student, I realized children lacking resources also lack awareness. AI Literacy Model was created to empower them through quality education and bridge the digital divide.</p>
+  <h2 class="text-4xl font-bold text-purple-400 mb-6">Our Mission, Vision & Goals<br><span class="text-lg text-gray-400">ہمارا مشن، وژن اور مقاصد</span></h2>
+  <p class="text-gray-300 bg-gray-800 rounded-lg p-4">As a privileged student, I realized children lacking resources also lack awareness. AI Literacy Model was created to empower them through quality education and bridge the digital divide.<br><span class="block mt-2 text-gray-400">ایک خوش قسمت طالب علم کے طور پر، میں نے محسوس کیا کہ وسائل کی کمی کے شکار بچوں کو آگاہی کی بھی کمی ہوتی ہے۔ اے آئی لٹریسی ماڈل ان کو معیاری تعلیم کے ذریعے بااختیار بنانے اور ڈیجیٹل خلا کو پُر کرنے کے لیے بنایا گیا۔</span></p>
 </section>
 
 <section id="categories" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 p-8">
-  <div class="card text-center">
-    <a href="primary.html" class="block text-xl font-semibold">Primary<br><span class="text-sm">ابتدائی</span></a>
-  </div>
-  <div class="card text-center">
-    <a href="middle.html" class="block text-xl font-semibold">Middle<br><span class="text-sm">درمیانہ</span></a>
-  </div>
-  <div class="card text-center">
-    <a href="secondary.html" class="block text-xl font-semibold">Secondary<br><span class="text-sm">ثانوی</span></a>
-  </div>
-  <div class="card text-center">
-    <a href="college.html" class="block text-xl font-semibold">College<br><span class="text-sm">کالج</span></a>
-  </div>
+  <div class="card text-center"><a href="primary.html" class="block text-xl font-semibold">Primary<br><span class="text-sm">ابتدائی</span></a></div>
+  <div class="card text-center"><a href="middle.html" class="block text-xl font-semibold">Middle<br><span class="text-sm">درمیانہ</span></a></div>
+  <div class="card text-center"><a href="secondary.html" class="block text-xl font-semibold">Secondary<br><span class="text-sm">ثانوی</span></a></div>
+  <div class="card text-center"><a href="college.html" class="block text-xl font-semibold">College<br><span class="text-sm">کالج</span></a></div>
 </section>
 
 <section id="faq" class="max-w-4xl mx-auto p-8">
   <h2 class="text-3xl font-bold text-center text-purple-400 mb-6">Frequently Asked Questions</h2>
   <div class="space-y-4">
-    <details class="bg-gray-800 p-4 rounded-lg">
-      <summary class="cursor-pointer text-lg font-semibold">What is AI Literacy Model?</summary>
-      <p class="mt-2 text-gray-300">It’s a project to bridge the gap between underprivileged students and AI education through free resources and awareness.</p>
-    </details>
-    <details class="bg-gray-800 p-4 rounded-lg">
-      <summary class="cursor-pointer text-lg font-semibold">Are these resources free?</summary>
-      <p class="mt-2 text-gray-300">Yes, all linked resources are free and accessible to everyone.</p>
-    </details>
-    <details class="bg-gray-800 p-4 rounded-lg">
-      <summary class="cursor-pointer text-lg font-semibold">Do you offer resources in Urdu?</summary>
-      <p class="mt-2 text-gray-300">Yes, our platform supports Urdu and English for easier access.</p>
-    </details>
+    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">What is AI Literacy Model?</summary><p class="mt-2 text-gray-300">It’s a project to bridge the gap between underprivileged students and AI education through free resources and awareness.</p></details>
+    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">Are these resources free?</summary><p class="mt-2 text-gray-300">Yes, all linked resources are free and accessible to everyone.</p></details>
+    <details class="bg-gray-800 p-4 rounded-lg"><summary class="cursor-pointer text-lg font-semibold">Do you offer resources in Urdu?</summary><p class="mt-2 text-gray-300">Yes, our platform supports Urdu and English for easier access.</p></details>
   </div>
 </section>
 
-<footer class="text-center py-6 text-gray-400">© 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com</footer>
+<footer id="contact" class="text-center py-6 text-gray-400">© 2025 AI Literacy Model | A Project of Future Tech Trends | Contact: futuretechtrendss@gmail.com</footer>
+
+<script>
+ document.getElementById('lang-toggle').addEventListener('click', function(){alert('Language toggle functionality coming soon!');});
+</script>
 </body>
 </html>
+
+<!-- Next: Create primary.html, middle.html, secondary.html, college.html with subject-specific free links for Maths, English, and Computer Science -->
