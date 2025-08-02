@@ -12,7 +12,6 @@
     background: #0f0f0f;
     color: #e0e0e0;
     overflow-x: hidden;
-    position: relative;
   }
   canvas#bgParticles {
     position: fixed;
@@ -36,10 +35,11 @@
   header nav a {
     margin: 0 1rem;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
   }
   header nav a:hover {
     color: #60a5fa;
+    text-shadow: 0 0 8px #60a5fa;
   }
   .fade-in {
     opacity: 0;
@@ -58,12 +58,21 @@
     margin: 2rem auto;
     max-width: 900px;
     box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+    animation: shimmer 3s infinite linear;
   }
   .hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #a78bfa;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 3s infinite linear;
     margin-bottom: 1rem;
+  }
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
   }
   .hero p {
     font-size: 1.2rem;
@@ -85,6 +94,11 @@
     margin: 1rem auto;
     max-width: 800px;
     color: #f1f5f9;
+    transition: transform 0.4s;
+  }
+  .info-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(147, 197, 253, 0.5);
   }
   .categories {
     display: grid;
@@ -100,9 +114,11 @@
     border-radius: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
     color: #fff;
+    cursor: pointer;
+    perspective: 1000px;
   }
   .category-card:hover {
-    transform: translateY(-10px);
+    transform: rotateY(8deg) scale(1.05);
     box-shadow: 0 0 35px rgba(147, 197, 253, 0.5);
   }
   footer {
@@ -123,6 +139,22 @@
     transition: background 0.3s;
   }
   .lang-toggle:hover {
+    background: #5b21b6;
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #7c3aed;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+  }
+  .back-to-top:hover {
     background: #5b21b6;
   }
 </style>
@@ -177,6 +209,7 @@
 <footer id="contact">
   © 2025 AI Literacy Model | A Project of Future Tech Trends
 </footer>
+<div class="back-to-top" id="backToTop">↑ Top</div>
 
 <script>
 // Particle background
@@ -237,8 +270,20 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-
 fadeEls.forEach(el => observer.observe(el));
+
+// Back-to-top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = 'block';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 </body>
 </html>
