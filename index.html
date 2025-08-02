@@ -12,6 +12,7 @@
     background: #0f0f0f;
     color: #e0e0e0;
     overflow-x: hidden;
+    position: relative;
   }
   canvas#bgParticles {
     position: fixed;
@@ -28,27 +29,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
+    position: sticky;top: 0;
     z-index: 50;
   }
   header nav a {
     margin: 0 1rem;
     font-weight: 500;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s;
   }
   header nav a:hover {
     color: #60a5fa;
-    text-shadow: 0 0 8px #60a5fa;
   }
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-in-out;
+  .logo-img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid transparent;
+    transition: box-shadow 0.3s, border-color 0.3s;
   }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .logo-img:hover {
+    box-shadow: 0 0 15px #9333ea, 0 0 30px #60a5fa;
+    border-color: #9333ea;
   }
   .hero {
     background: linear-gradient(135deg, #1e1e2e, #2d2d44, #3b1d5c);
@@ -58,44 +60,78 @@
     margin: 2rem auto;
     max-width: 900px;
     box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
-    animation: shimmer 3s infinite linear;
+    transition: transform 0.4s ease;
   }
+  .hero:hover { transform: scale(1.03); }
   .hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% auto;
-    animation: gradientMove 3s infinite linear;
+    color: #a78bfa;
     margin-bottom: 1rem;
   }
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+  .hero p { font-size: 1.2rem; line-height: 1.6; color: #d1d5db; }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c084fc;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    transition: transform 0.3s ease;
   }
-  .hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #d1d5db;
+  .section-title:hover { transform: scale(1.05); }
+  .info-box {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(167, 139, 250, 0.3);
+    margin: 1rem auto;
+    max-width: 800px;
+    color: #f1f5f9;
+    transition: transform 0.3s ease;
   }
-  .logo-img {
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transition: box-shadow 0.3s, border-color 0.3s;
+  .info-box:hover { transform: scale(1.02); }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 900px;
   }
-  .logo-img:hover {
-    box-shadow: 0 0 15px #9333ea, 0 0 30px #60a5fa;
-    border-color: #9333ea;
+  .category-card {
+    background: #1e1e2e;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
   }
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px rgba(147, 197, 253, 0.5);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #111827;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+  .lang-toggle {
+    margin-left: 1rem;
+    background: #7c3aed;color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  .lang-toggle:hover { background: #5b21b6; }
 </style>
 </head>
 <body>
 <canvas id="bgParticles"></canvas>
 <header>
-  <div class="flex items-center space-x-3">
+  <div class="flex items-center">
     <img src="logo.png" alt="AI Literacy Model Logo" class="logo-img">
     <h1 class="text-xl font-bold text-purple-400">AI Literacy Model</h1>
   </div>
@@ -109,6 +145,87 @@
   </nav>
 </header>
 
-<!-- Rest of the content remains unchanged -->
+<section class="hero" id="home">
+  <h1 id="welcome-text">Welcome to AI Literacy Model</h1>
+  <p id="welcome-desc">Empowering students with free AI-based resources and bridging the gap between underprivileged communities and modern education. <br> <span class="text-purple-300">اے آئی لٹریسی ماڈل میں خوش آمدید</span></p>
+</section>
+
+<h2 class="section-title" id="about">Our Mission, Vision & Goals</h2>
+<div class="info-box" id="mission-text">
+  <p>We aim to provide free and quality educational resources for AI and technology, enabling underprivileged students to thrive in the digital age. <br> <span class="text-purple-300">ہمارا مقصد یہ ہے کہ ہم طلباء کو معیاری تعلیم فراہم کریں تاکہ وہ ڈیجیٹل دور میں کامیاب ہو سکیں۔</span></p>
+</div>
+
+<h2 class="section-title" id="categories">Categories</h2>
+<div class="categories">
+  <div class="category-card"><a href="primary.html">Primary<br><span>ابتدائی</span></a></div>  <div class="category-card"><a href="middle.html">Middle<br><span>درمیانہ</span></a></div>
+  <div class="category-card"><a href="secondary.html">Secondary<br><span>ثانوی</span></a></div>
+  <div class="category-card"><a href="college.html">College<br><span>کالج</span></a></div>
+</div>
+
+<h2 class="section-title" id="faq">FAQ</h2>
+<div class="info-box">
+  <p><strong>Q:</strong> Why did you create AI Literacy Model?<br><strong>A:</strong> To empower children from underserved communities with AI and digital literacy skills.</p>
+  <p><strong>Q:</strong> Is this platform free to use?<br><strong>A:</strong> Yes, all resources are completely free and accessible to everyone.</p>
+  <p><strong>Q:</strong> Do you offer resources in multiple languages?<br><strong>A:</strong> Yes, currently we support English and Urdu.</p>
+  <p><strong>Q:</strong> How can I contact you?<br><strong>A:</strong> You can email us at futuretechtrendss@gmail.com.</p>
+</div>
+
+<h2 class="section-title">Contact Us</h2>
+<div class="info-box">
+  <p><strong>Email:</strong> futuretechtrendss@gmail.com</p>
+  <p><strong>Location:</strong> Lahore, Punjab</p>
+  <p>A Project of Future Tech Trends</p>
+</div>
+
+<footer id="contact">
+  © 2025 AI Literacy Model | A Project of Future Tech Trends
+</footer>
+
+<script>
+// Particle background
+const canvas = document.getElementById('bgParticles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 2,
+    speedX: (Math.random() - 0.5) * 1,
+    speedY: (Math.random() - 0.5) * 1,
+  });
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#9333ea';
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
+function moveParticles() {
+  particles.forEach(p => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+  });
+}
+
+function animate() {
+  drawParticles();
+  moveParticles();
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>
